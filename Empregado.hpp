@@ -5,24 +5,35 @@
 #include <string>
 
 class Empregado {
-	
+
   public:
-    double salarioHora;  
-    double quotaMensalVendas;  
 
+    double setSalarioHora(double SSH );
+    double getSalarioHora() ;
 
-    double pagamentoMes(double horasTrabalhadas) {
- 
-      double t = horasTrabalhadas;
-	  
-	  //Cálculo de hora extra (+50% se horasTrabalhadas > 8)
-      if (horasTrabalhadas > 8) {
-        double x = horasTrabalhadas - 8;
-        t += x / 2;
-      }
-	  return t * salarioHora;
-    }
-	
+    double getQuotaMensalVendas() ; 
+    double setQuotaMensalVendas(double QMV) ;
+
+    double get_horasTrabalhadas() ;
+    double set_horasTrabalhadas(double SHT ) ;
+    
+    void imprime();
+
+    std::string setNome(std::string nome);
+    std::string getNome();
+
+    void pagamentoMes(double _horasTrabalhadas) ;
+
+    double getsalarioMes() ;
+
+    //mudei para privado as variaveis
+    private:
+    std::string _nome;
+    double _salarioHora;  
+    double _horasTrabalhadas;
+    double _quotaMensalVendas; 
+    double salarioMes;
+
 };
 
 #endif
